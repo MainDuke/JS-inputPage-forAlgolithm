@@ -1,0 +1,41 @@
+<html>
+    <head>
+      <title>알고리즘 문제 풀이 연동</title>
+      <link rel="stylesheet" type="text/css" href="./CSS/main_style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <script type="text/javascript"  src="./JS/algolithm.js"></script>  
+    </head>
+    <body>
+
+        <div class="container" >
+
+                <div class="jumbotron">
+                        <h1 class="display-4">알고리즘 프로퍼티 입력기 </h1>
+                        <p class="lead">이 페이지는 자바스크립기반 알고리즘을 짤 때, 편리하게 값을 넣고 출력받기 위해서 만들었습니다.</p>
+                        <hr class="my-4">
+                        <p>테스트중, version - javascript</p>
+                        </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Input here</label>
+                    <input type="text" class="form-control" id="inputSlot" name="inputSlot">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">output here</label>
+                    <input type="text" class="form-control" id="outputSlot" name="outputSlot">
+                  </div>
+            
+            <input type="button" class="btn btn-lg btn-primary btn-block"  value="run" onclick= "initFunction(document.getElementById('inputSlot').value)">
+        
+        </div>
+
+
+
+        <!--option-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>
