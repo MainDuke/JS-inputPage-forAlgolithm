@@ -1,35 +1,45 @@
-function initFunction(data) {
-  console.log("start algolithm");
-  console.log("input value = " + data);
-
-  console.log("typeof = " + typeof data);
+function initFunction(arrangement) {
 
 
-  count = -1;
-
-  console.log('start Roof =' + count);
-  while(count) {
-    console.log('start While =' + count);
-    count++;
-
-    console.log('end While =' + count);
-  }
-  console.log('end roof =' + count);
+  //console.log(arrangement);
+  //console.log(typeof(arrangement));
 
 
+  var answer = [];
 
+  //디데이 배열을 만들자.
+  
+var p = new Person();
+  // console.log(progresses);
 
-
-
-  //outputSlot 에 값 넣기!
-  //setAttribute 는 디폴트 값을 설정하는거고, 현재 데이터를 넣기 위해서는
-  //value 값에 직접 컨트롤하는게 맞다.
-  document.getElementById("outputSlot").value = data;
+  // console.log(speeds);
+  // console.log(result);
+  // console.log(answer);
+  console.log(p);
   console.log("end init function");
-
 } //initFunction end
 
-function ListNode(val) {
-     this.val = val;
-     this.next = null;
+function testCase(int){
+  switch(int){
+    case 1: return "1";
+    case 2: return "2"; 
+    case 3: return "3"; 
+    default : console.log("default");
+    
+    console.log("test break;");
   }
+}
+
+function Person() {
+  // Person() 생성자는 `this`를 자신의 인스턴스로 정의.
+  var that= this;
+  that.age = 0;
+
+  setInterval(function growUp() {
+    // 비엄격 모드에서, growUp() 함수는 `this`를
+    // 전역 객체로 정의하고, 이는 Person() 생성자에
+    // 정의된 `this`와 다름.
+    that.age++;
+    console.log("this age : "+that.age);
+  }, 1000);
+}
