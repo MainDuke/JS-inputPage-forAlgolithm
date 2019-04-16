@@ -1,46 +1,59 @@
 <html>
-    <head>
-        <title>
-            test-ajax
-        </title>
+  <head>
+    <title>
+      test-ajax
+    </title>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    </head>
-    <body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      //측정소 위치정보 API 사용
+      var url =
+        "http://openapi.airkorea.or.kr/openapi/services/rest/MsrstnInfoInqireSvc/getMsrstnList"; /*URL*/
+      var queryParams =
+        "?" +
+        encodeURIComponent("ServiceKey") +
+        "=" +
+        "xUM0mQveYt1wQCpmDP9tMxwcFfKnPW1dNEzveG8jbPa7WgYBibBxscLuvr4y7VYu1MfAolrFPpokOZmyfTILcw%3D%3D"; /*Service Key*/
+      queryParams +=
+        "&" +
+        encodeURIComponent("numOfRows") +
+        "=" +
+        encodeURIComponent("40"); /*한 페이지 결과 수*/
+      queryParams +=
+        "&" +
+        encodeURIComponent("pageNo") +
+        "=" +
+        encodeURIComponent("1"); /*페이지 번호*/
+      queryParams +=
+        "&" +
+        encodeURIComponent("addr") +
+        "=" +
+        encodeURIComponent("서울"); /*읍면동명*/
 
-            <script>
-            //측정소 위치정보 API 사용
-            var url = 'http://openapi.airkorea.or.kr/openapi/services/rest/MsrstnInfoInqireSvc/getMsrstnList'; /*URL*/
-            var queryParams = '?' + encodeURIComponent('ServiceKey') + '='+'xUM0mQveYt1wQCpmDP9tMxwcFfKnPW1dNEzveG8jbPa7WgYBibBxscLuvr4y7VYu1MfAolrFPpokOZmyfTILcw%3D%3D'; /*Service Key*/
-            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('40'); /*한 페이지 결과 수*/
-            queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호*/
-            queryParams += '&' + encodeURIComponent('addr') + '=' + encodeURIComponent('서울'); /*읍면동명*/
+      let hello = url + queryParams + "&_returnType=json";
+      console.log(hello);
 
-            let hello = url+queryParams+"&_returnType=json";
-            console.log(hello);
-
-            $.ajax({
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Credentials' : true,
-                    'Access-Control-Allow-Origin' : '*',
-                    'Access-Control-Allow-Methods':'GET',
-                    'Access-Control-Allow-Headers':'contentType'
-                    },
-                url : url+queryParams+"&_returnType=json",
-                type : "get",
-                contentType : "application/json;charset=utf-8",
-                dataType:'json',
-                success : function() {
-                    console.log(data);
-                },
-                error : function(error) {
-                    console.log(error);
-                }
-            });
-
-            </script>
-
-
-    </body>
+      $.ajax({
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET",
+          "Access-Control-Allow-Headers": "contentType"
+        },
+        url: url + queryParams + "&_returnType=json",
+        type: "get",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function() {
+          console.log(data);
+        },
+        error: function(error) {
+          console.log(error);
+        }
+      });
+    </script>
+  </body>
 </html>

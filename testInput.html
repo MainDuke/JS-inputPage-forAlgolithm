@@ -1,0 +1,45 @@
+<Html>
+  <head> </head>
+  <body>
+    <div id="output"></div>
+    <div style="margin: 25px auto; width: 80%; height: auto;">
+      <form id="myform" name="myform">
+        <textarea
+          id="mytextarea"
+          name="mytextarea"
+          cols="90"
+          rows="20"
+        ></textarea>
+        <br />
+        <button type="button" id="mybutton">execute</button>
+      </form>
+    </div>
+
+    <script>
+      window.addEventListener("load", function() {
+        document
+          .getElementById("mybutton")
+          .addEventListener("click", function(e) {
+            var mytextarea = document.getElementById("mytextarea");
+            var pattern = /<script>([^]+?)<\/script>/gm;
+            var matches,
+              txt = mytextarea.value;
+            if (txt) {
+              while ((matches = pattern.exec(txt))) {
+                if (matches[1]) {
+                  var tContent = matches[1].replace(/(\n|\r)+/gm, "");
+                  var s = document.createElement("script");
+                  s.innerText = tContent;
+                  document.body.appendChild(s);
+                }
+              }
+              txt = txt.replace(pattern, "");
+            }
+            if (txt) {
+              document.getElementById("output").innerHTML = txt;
+            }
+          });
+      });
+    </script>
+  </body>
+</Html>

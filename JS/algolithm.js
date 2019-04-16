@@ -3,19 +3,11 @@ function initFunction(arrangement) {
 
   //console.log(arrangement);
   //console.log(typeof(arrangement));
+  console.log("start init function");
+
+  testPrint()
 
 
-  var answer = [];
-
-  //디데이 배열을 만들자.
-  
-var p = new Person();
-  // console.log(progresses);
-
-  // console.log(speeds);
-  // console.log(result);
-  // console.log(answer);
-  console.log(p);
   console.log("end init function");
 } //initFunction end
 
@@ -42,4 +34,17 @@ function Person() {
     that.age++;
     console.log("this age : "+that.age);
   }, 1000);
+}
+
+function testPrint(){
+
+  function foo(x) {
+    this.x = x;
+};
+
+var A = new foo('hello'); 
+console.log(A.x);
+
+console.log(A.prototype.x)
+
 }
